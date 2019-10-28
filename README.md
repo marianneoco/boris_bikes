@@ -2,6 +2,11 @@
 
 **Motivation:** to build a program to emulate the docking stations, bikes and infrastructure required for the Boris Bikes project.
 
+**Practise:**
+* TDD
+* OOP
+* Debugging
+
 **Tech/ framework used:** Ruby
 
 *Good README:*
@@ -16,6 +21,6 @@
 - Installations
 - API reference
 - Tests
-- How to use?
-- Contribute
+- How to use
+- How to contribute
 - Credits
