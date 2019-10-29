@@ -2,7 +2,19 @@ require './lib/boris_bikes'
 
 describe DockingStation do
   it { should respond_to(:release_bike) }
+
+it "responds to working method" do
+docking_station = DockingStation.new
+expect(docking_station.release_bike).to respond_to(:working?)
 end
+
+it "responds to working method and returns true" do
+  docking_station = DockingStation.new
+  expect(docking_station.release_bike.working?).to be true
+end
+end
+
+
 
 
 
