@@ -24,7 +24,7 @@ describe DockingStation do
 
   it "raises an error when user tries to release bike when no bike docked" do
     docking_station = DockingStation.new
-    expect {docking_station.release_bike}.to raise_error
+    expect { docking_station.release_bike }.to raise_error(RuntimeError)
   end
 
 end
