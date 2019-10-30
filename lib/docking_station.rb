@@ -6,7 +6,7 @@ class DockingStation
 
   def release_bike
     if bike == nil
-      raise RuntimeError, 'There is no bikes available'
+      raise RuntimeError, 'There is no bike available'
     else
       bike = Bike.new
     end
