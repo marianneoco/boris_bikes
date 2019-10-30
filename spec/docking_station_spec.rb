@@ -15,6 +15,12 @@ describe DockingStation do
 
   it { should respond_to(:dock).with(1).argument }
 
+  it "shows the user a bike that has been docked" do
+    docking_station = DockingStation.new
+    new_bike = Bike.new
+    docking_station.dock(new_bike)
+    expect(docking_station.bike).to eq new_bike
+  end
 end
 
 
