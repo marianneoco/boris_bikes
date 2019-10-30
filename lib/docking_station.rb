@@ -1,10 +1,8 @@
 class Bike
   def working?
-true
+    true
   end
 end
-
-
 
 class DockingStation
   def release_bike
