@@ -21,6 +21,12 @@ describe DockingStation do
     docking_station.dock(new_bike)
     expect(docking_station.bike).to eq new_bike
   end
+
+  it "raises an error when user tries to release bike when no bike docked" do
+    docking_station = DockingStation.new
+    expect {docking_station.release_bike}.to raise_error
+  end
+
 end
 
 
