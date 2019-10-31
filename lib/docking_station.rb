@@ -2,7 +2,7 @@ require './lib/bike.rb'
 
 class DockingStation
 
-  CAPACITY = 20
+  DEFAULT_CAPACITY = 20
 
   attr_reader :bikes
 
@@ -33,7 +33,7 @@ class DockingStation
   end
 
   def full?
-    @bikes.length < CAPACITY ? false : true
+    @bikes.length < DEFAULT_CAPACITY ? false : true
   end
 
 end

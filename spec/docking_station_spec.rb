@@ -25,7 +25,7 @@ describe DockingStation do
 
   it "raises an error when user tries to dock a bike when the docking station is already full" do
     docking_station = DockingStation.new
-    expect {(DockingStation::CAPACITY + 1).times { docking_station.dock(Bike.new) }}.to raise_error(RuntimeError)
+    expect {(DockingStation::DEFAULT_CAPACITY + 1).times { docking_station.dock(Bike.new) }}.to raise_error(RuntimeError)
   end
 
 end
