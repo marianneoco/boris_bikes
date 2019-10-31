@@ -31,7 +31,7 @@ describe DockingStation do
   it "allows user to specify a capacity" do
     capacity = 15
     docking_station = DockingStation.new(capacity)
-    expect (docking_station.capacity).to eq capacity
+    expect(docking_station.capacity).to eq capacity
   end
 
 end
