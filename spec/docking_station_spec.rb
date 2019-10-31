@@ -14,7 +14,7 @@ describe DockingStation do
     docking_station = DockingStation.new
     new_bike = Bike.new
     docking_station.dock(new_bike)
-    expect(docking_station.bike).to eq new_bike
+    expect(docking_station.bikes).to eq new_bike
   end
 
   it "raises an error when user tries to release bike when no bike docked" do

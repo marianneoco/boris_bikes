@@ -2,19 +2,23 @@ require './lib/bike.rb'
 
 class DockingStation
 
-  attr_reader :bike
+  attr_reader :bikes
+
+  def initialize
+    @bikes = []
+  end
 
   def release_bike
-    if bike == nil
+    if @bikes == nil
       raise RuntimeError, 'There is no bike available'
     else
-      bike = Bike.new
+      @bikes = Bike.new
     end
   end
 
   def dock(bike)
-    if @bike == nil
-      @bike = bike
+    if @bikes == nil
+      @bikes = bike
     else
       raise RuntimeError, 'Docking station is full'
     end
