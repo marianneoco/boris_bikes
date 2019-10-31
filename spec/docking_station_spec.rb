@@ -14,7 +14,7 @@ describe DockingStation do
     docking_station = DockingStation.new
     new_bike = Bike.new
     docking_station.dock(new_bike)
-    expect(docking_station.bikes).to eq new_bike
+    expect(docking_station.bikes).to eq [new_bike]
   end
 
   it "raises an error when user tries to release bike when no bike docked" do
@@ -24,10 +24,7 @@ describe DockingStation do
 
   it "raises an error when user tries to dock a bike when the docking station is already full" do
     docking_station = DockingStation.new
-    bike_1 = Bike.new
-    docking_station.dock(bike_1)
-    bike_2 = Bike.new
-    expect {docking_station.dock(bike_2)}.to raise_error(RuntimeError)
+    expect {(DockingStation::CAPACITY + 1).times { docking_station.dock(Bike.new) }}.to raise_error(RuntimeError)
   end
 
 end
