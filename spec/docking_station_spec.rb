@@ -28,6 +28,12 @@ describe DockingStation do
     expect {(DockingStation::DEFAULT_CAPACITY + 1).times { docking_station.dock(Bike.new) }}.to raise_error(RuntimeError)
   end
 
+  it "allows user to specify a capacity" do
+    capacity = 15
+    docking_station = DockingStation.new(capacity)
+    expect (docking_station.capacity).to eq capacity
+  end
+
 end
 
 
