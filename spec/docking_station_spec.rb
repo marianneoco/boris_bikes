@@ -5,6 +5,7 @@ describe DockingStation do
 
   it "responds to working method and returns true" do
     docking_station = DockingStation.new
+    docking_station.dock(Bike.new)
     expect(docking_station.release_bike.working?).to be true
   end
 
