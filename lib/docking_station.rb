@@ -13,7 +13,11 @@ class DockingStation
   end
 
   def dock(bike)
-    @bike = bike
+    if @bike == nil
+      @bike = bike
+    else
+      raise RuntimeError, 'Docking station is full'
+    end
   end
 end
 
