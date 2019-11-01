@@ -20,12 +20,12 @@ describe DockingStation do
 
   it "raises an error when user tries to release bike when no bike docked" do
     docking_station = DockingStation.new
-    expect { docking_station.release_bike }.to raise_error(RuntimeError)
+    expect { docking_station.release_bike }.to raise_error 'There is no bike available'
   end
 
   it "raises an error when user tries to dock a bike when the docking station is already full" do
     docking_station = DockingStation.new
-    expect {(DockingStation::DEFAULT_CAPACITY + 1).times { docking_station.dock(Bike.new) }}.to raise_error(RuntimeError)
+    expect {(DockingStation::DEFAULT_CAPACITY + 1).times { docking_station.dock(Bike.new) }}.to raise_error 'Docking station is full'
   end
 
   it "allows user to specify a capacity" do
@@ -37,6 +37,13 @@ describe DockingStation do
   it "defaults to 20 capacity" do
     docking_station = DockingStation.new
     expect(docking_station.capacity).to eq 20
+  end
+
+  it "raises an error when trying to release a broken bike" do
+    docking_station = DockingStation.new
+    broken_bike = Bike.new(false)
+    docking_station.dock(broken_bike)
+    expect{ docking_station.dock(broken_bike) }.to raise_error "Can't release broken bike"
   end
 
 end
