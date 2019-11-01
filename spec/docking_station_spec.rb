@@ -43,7 +43,7 @@ describe DockingStation do
     docking_station = DockingStation.new
     broken_bike = Bike.new(false)
     docking_station.dock(broken_bike)
-    expect{ docking_station.dock(broken_bike) }.to raise_error "Can't release broken bike"
+    expect{ docking_station.release_bike }.to raise_error "Can't release broken bike"
   end
 
 end

@@ -7,7 +7,7 @@ class Bike
   end
 
   def working?
-    true
+    @works
   end
 end
 
